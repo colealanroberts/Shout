@@ -84,6 +84,10 @@ class Session {
         return newAgent
     }
     
+    func disconnect() {
+        libssh2_session_disconnect()
+    }
+    
     deinit {
         libssh2_session_free(cSession)
     }
